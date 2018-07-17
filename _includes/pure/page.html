@@ -1,0 +1,26 @@
+<div class="posts">
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <h1 class="content-subhead">{{ site.title | escape }} {{ site.description | escape }}</h1>
+
+  <section class="post">
+        <header class="post-header">
+    <!-- {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+    <h2 class="post-title">
+        <a href="{{ post.url | relative_url }}">
+        {{ post.title | escape }}</a></h2> -->
+    <p class="post-meta">
+            <!-- <span class="post-author">Wrote on {{ post.date | date: date_format }} under </span> -->
+            {%- for category in page.categories -%}
+            <span class="post-category" >{{ category | escape }}</span>
+            {%- endfor -%}
+        </p>
+
+   </header>
+      <div class="post-description">
+            <p>
+                    {{ content }}
+            </p>
+        </div>
+  </section>
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</div>

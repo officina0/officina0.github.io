@@ -1,0 +1,31 @@
+{%- if site.posts.size > 0 -%}
+<div class="posts">
+        <h1 class="content-subhead">{{ page.list_title | default: "Posts" }}</h1>
+  {%- for post in site.posts -%}
+  <section class="post">
+        <header class="post-header">
+    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+    <h2 class="post-title">
+        <a href="{{ post.url | relative_url }}">
+        {{ post.title | escape }}</a></h2>
+    <p class="post-meta">
+            <span class="post-author">Wrote on {{ post.date | date: date_format }} under </span>
+            {%- for category in post.categories -%}
+            <span class="post-category" >{{ category | escape }}</span>
+            {%- endfor -%}
+        </p>
+
+   </header>
+    {%- if site.show_excerpts -%}
+     
+      <div class="post-description">
+            <p>
+                    {{ post.excerpt }}
+            </p>
+        </div>
+    {%- endif -%}
+  </section>
+  {%- endfor -%}
+</div>
+<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+{%- endif -%}

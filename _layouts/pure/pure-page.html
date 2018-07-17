@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+        {%- include pure/pure-head.html -%}
+<body>
+
+<div id="layout" class="pure-g">
+        {%- include pure/sidebar-post.html -%}
+
+    <div class="content pure-u-1 pure-u-md-3-4">
+        {%- if page.svg -%}
+        <div class="post">   
+                {% assign img_name = '/assets' | append: page.svg  | append: '.svg' %}
+                <img width="200" height="200"  class="post-avatar" src="{{ img_name | relative_url  }}">
+        </div>
+        {%- endif -%}
+        <div>
+        {%- include pure/page.html -%}
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>
