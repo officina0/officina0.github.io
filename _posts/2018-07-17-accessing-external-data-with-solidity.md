@@ -7,7 +7,7 @@ categories: solidity
 Simple article demonstrating how access external data in a Oraclize style with a homemade implementation.
 
 
-**Attention:** the contracys in example doesn't implement any kind of security, so before using it in production environment it should be reviewed with security constraints.
+**Attention:** the contracts in example doesn't implement any kind of security, so before using it in production environment it should be reviewed with security constraints.
 
 In this article I want to demonstrate how to handling external data with solidity.
 
